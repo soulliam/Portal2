@@ -3,10 +3,49 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     
     <style>
+
+
+        #search_content-box1, #search_content-box2, #search_content-box3 {
+			padding:5px;
+			/*border:1px solid #bbb;*/
+			position:absolute;
+			margin-top:0px;
+			height:118px;
+            width:185px;
+		}
+        #search_content-box1 {
+            margin-left:0px;
+        }
+        #search_content-box2 {
+            margin-left:185px;
+        }
+        #search_content-box3 {
+            margin-left:370px;
+        }
+
+        #SearchMemberId, #SearchPhoneNumber, #SearchEmail {
+            margin-top:0px;
+        }
+        #SearchFirstName, #SearchLastName, #SearchUserName, #SearchFPNumber, #SearchCompany, #SearchMailerCompany, #SearchMailerCode, #SearchPhone, #SearchSteetAddress {
+            margin-top:5px;
+        }
+
+        #MemberSearch .FPR_SearchBox{
+            width:100%;height:130px;
+        }
+        .FPR_SearchRight {
+            position:absolute;
+            float:none;
+            margin-left:580px;
+            /*border:1px solid #bbb;*/
+        }
         #memberSearchRightButtons {
-            float:right;
-            height:70px;
-            width:160px;
+            margin-left:690px;
+            height:90px;
+            width:180px;
+            position:absolute;
+            margin-top:0px;
+            /*border:1px solid #bbb;*/
         }
         #btnMarketing, #btnImportStatus, #btnFindTransaction {
             width:170px;
@@ -522,7 +561,7 @@
 
         function loadSearchResults() {
             //Loads SearchList from parameters
-            var thisMemberId = $("#txtMemberId").val();
+            var thisMemberId = $("#SearchMemberId").val();
 
             var url = "http://52.40.189.219:80/api/v1/members/" + thisMemberId;
 
@@ -741,23 +780,39 @@
         
     </style>
 
-    <div id="ApplicationName">    
+    <div id="MemberSearch">    
         <div id="jqxLoader"></div>
         <div class="FPR_SearchBox" style="display:block;">
             <div class="FPR_SearchLeft">
-                <input type="text" id="txtMemberId" value="18" />
-            </div>
-            <div style="width:50%; float:right">
-                <div class="FPR_SearchRight" style=" float:left; margin-left:200px">
-                    <a href="javascript:" id="btnSearch" style="float:left">Search</a>   
-                  
+                <div id="search_content-box1">
+                    <input type="text" id="SearchMemberId" placeholder="MemberId" />
+                    <input type="text" id="SearchFirstName" placeholder="First Name" />
+                    <input type="text" id="SearchLastName" placeholder="Last Name"  />
+                    <input type="text" id="SearchFPNumber" placeholder="Card Number" />
                 </div>
-                <div id="memberSearchRightButtons">
-                    <input type="button" id="btnMarketing" value="Marketing" />
-                    <input type="button" id="btnImportStatus" value="Import Status" />
-                    <input type="button" id="btnFindTransaction" value="Find Transaction" />
+                <div id="search_content-box2">
+                    <input type="text" id="SearchPhoneNumber" placeholder="Phone Number" />
+                    <input type="text" id="SearchUserName" placeholder="User Name"  />
+                    <input type="text" id="SearchCompany" placeholder="Company" />
+                    <input type="text" id="SearchMailerCompany" placeholder="Mailer Company" />
+                </div>
+                <div id="search_content-box3">
+                    <input type="text" id="SearchEmail" placeholder="Email" />
+                    <input type="text" id="SearchMailerCode" placeholder="Mailer Code"  />
+                    <input type="text" id="SearchPhone" placeholder="Phone" />
+                    <input type="text" id="SearchSteetAddress" placeholder="Street Address" />
                 </div>
             </div>
+            
+            <div class="FPR_SearchRight">
+                <a href="javascript:" id="btnSearch">Search</a>   
+            </div>
+            <div id="memberSearchRightButtons">
+                <input type="button" id="btnMarketing" value="Marketing" />
+                <input type="button" id="btnImportStatus" value="Import Status" />
+                <input type="button" id="btnFindTransaction" value="Find Transaction" />
+            </div>
+            
         </div>
         
         <div id="jqxSearchGrid"></div>

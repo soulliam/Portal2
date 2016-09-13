@@ -53,7 +53,7 @@
                                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">RfR Tools<span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Articles/Company</a></li>
-                                        <li><a href="Search.aspx">Search/Maintain Customer</a></li>
+                                        <li><a href="MemberSearch.aspx">Search/Maintain Customer</a></li>
                                         <li><a href="ImportStatus.aspx">View File Import Status</a></li>
                                         <li><a href="Marketing.aspx" target="_blank">Marketing mailer Page</a></li>
                                         <li><a href="#">Pending Manual Edits</a></li>
