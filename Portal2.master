@@ -1,0 +1,133 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Portal2.master.cs" Inherits="Portal2" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="StyleSheet.css">
+    <link rel="stylesheet" href="scripts/bootstrap.min.css">
+
+       
+    
+</head>
+<body runat="server" ID="masterBody" style="overflow-x: hidden">
+    <div class="wrapper">
+        <form runat="server">
+            <asp:TextBox runat="server" ID="userGuid" style="visibility:hidden">421D908F8CC141718DE5CDAB2C89BFA4</asp:TextBox>
+            <table class="table" style="margin-bottom:0px;padding:0px;">
+                <tr>
+                    <td style="padding:0px 8px 0px 8px;">
+                        <nav class="navbar navbar-inverse" style="border-bottom:0px;">
+                            <div class="container-fluid">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span> 
+                                </button>
+                                <a class="navbar-brand" href="#"><img src="/images/FastPark.png" /></a>
+                            </div>
+                            <div class="collapse navbar-collapse" id="myNavbar">
+                                <ul class="nav navbar-nav">
+                                <li class="active"><a href="#">Home</a></li>
+                                <li runat="server" id="Manager" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Cards/Coupons<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">CouponTracking</a></li>
+                                        <li><a href="#">Coupon Zip Tracking</a></li>
+                                        <li><a href="#">Coupon Tracking Cashier Form</a></li> 
+                                        <li><a href="CardInventory.aspx">Card Inventory</a></li>
+                                        <li><a href="#">Coupon Administration</a></li>
+                                        <li><a href="#">Coupon Search</a></li>   
+                                        <li><a href="#">Contract Administration</a></li>
+                                        <li><a href="#">Maintain Coupon Types</a></li> 
+                                        <li><a href="#">Maintain User Tiers</a></li> 
+                                    </ul>
+                                </li> 
+                                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">RfR Tools<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Articles/Company</a></li>
+                                        <li><a href="Search.aspx">Search/Maintain Customer</a></li>
+                                        <li><a href="ImportStatus.aspx">View File Import Status</a></li>
+                                        <li><a href="Marketing.aspx" target="_blank">Marketing mailer Page</a></li>
+                                        <li><a href="#">Pending Manual Edits</a></li>
+                                        <li><a href="#">Re-Activate Member</a></li>
+                                        <li><a href="#">Re-Send Users</a></li>
+                                        <li><a href="#FindTransaction.aspx">Search Transactions</a></li>
+                                        <li><a href="#">Search Certificates</a></li>
+                                        <li><a href="#">Combine Companies</a></li>
+                                        <li><a href="#">Member Article/Company Update</a></li>
+                                        <li><a href="#">View/Maintain Reservations</a></li>    
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">CMS<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="Locations.aspx">Locations</a></li>
+                                        <li><a href="Cities.aspx">Cities</a></li>
+                                        <li><a href="Airports.aspx">Airports</a></li>
+                                        <li><a href="LocationFeatures.aspx">Location Features</a></li>
+                                        <li><a href="#">Reservations Maintenance</a></li> 
+                                        <li><a href="#">Blog Entries</a></li>
+                                        <li><a href="#">News</a></li>
+                                        <li><a href="#">Articles</a></li>
+                                        <li><a href="#">Re-Send User</a></li> 
+                                        <li><a href="#">Reciews</a></li>
+                                       
+                                    </ul>
+                                </li> 
+                                <li><a href="#">Reports</a></li>
+                                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Vehicles<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Vehicle Search</a></li>
+                                        <li><a href="#">Daily Tracking</a></li>
+                                        <li><a href="#">Add Stock</a></li> 
+                                    </ul>
+                                </li> 
+                                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Legal<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Coupon Tracking</a></li>
+                                        <li><a href="#">Coupon Zip Tracking</a></li>
+                                        <li><a href="#">Coupon Tracking Cashier Form</a></li> 
+                                        <li><a href="#">Contract Administration</a></li>
+                                        <li><a href="#">Coupon Administration</a></li> 
+                                    </ul>
+                                </li>
+                                </ul>
+                                <ul class="nav navbar-nav navbar-right">
+                                <!-- <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li> -->
+                                <li><a href="#"><asp:Label runat="server" ID="loginLabel" Text="test"></asp:Label></a></li>
+                                </ul>
+                            </div>
+                            </div>
+                        </nav>
+                    </td>
+                </tr>
+            </table>
+            <asp:HiddenField ID="txtLoggedinUsername" runat="server" />
+            <div class="FPR_Content">
+                <div id="statusMessage"></div>
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </form>
+        </div>
+        <div class="footer"></div>
+    
+    
+    
+   <script type="text/javascript">
+        $('ul.nav li.dropdown').hover(function () {
+            $(this).find('.dropdown-menu').stop(true, true).delay(50).fadeIn(200);
+        }, function () {
+            $(this).find('.dropdown-menu').stop(true, true).delay(50).fadeOut(200);
+        });
+    </script>
+</body>
+</html>
+
